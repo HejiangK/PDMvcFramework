@@ -1,0 +1,3 @@
+﻿#include "IObserver.h"
+
+
