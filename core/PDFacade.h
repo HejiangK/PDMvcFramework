@@ -21,7 +21,7 @@ public:
         return facade;
     }
 
-    //-------------------------------view--------------------------------
+    //-------------------------------observer--------------------------------
 
     /***
     * 注册察
@@ -34,14 +34,11 @@ public:
     virtual void removeObserver(const QString &notificationName) override;
 
     /***
-    * 是否包含该notification的观察者
-    **/
-    virtual bool isHasObserver(const QString &notificationName) override;
-
-    /***
     * 通知观察者
     **/
     virtual void notifiObserver(INotification *notification) override;
+
+    //-------------------------mediator-------------------
 
     /**
     * 注册view处理
@@ -59,9 +56,14 @@ public:
     virtual IMediator *getMediator(const QString &mediatorName) override;
 
     /**
-    * 是否包含mediator
+    * 获取具体类型的mediator
     **/
-    virtual bool isHasMediator(const QString &mediatorName) override;
+    template <typename ObjectType>
+    ObjectType *getTypeMediator(const QString *mediatorName)
+    {
+        return qobject_cast<ObjectType>(getMediator(mediatorName));
+    }
+
 
     //-------------------------------------Model------------------------
 
@@ -80,7 +82,16 @@ public:
     **/
     virtual IProxy *getProxy(const QString &proxyName) override;
 
-    //------------------------------control-------------
+    /**
+    * 获取具体类型的proxy
+    **/
+    template <typename ObjectType>
+    ObjectType *getTypeProxy(const QString &proxyName)
+    {
+        return qobject_cast<ObjectType>(getProxy(proxyName));
+    }
+
+    //------------------------------command-------------
 
     /**
     * 注册command
@@ -91,12 +102,6 @@ public:
     * 一次command
     ***/
     virtual void removeCommand(const QString &notificationName) override;
-
-    /**
-    * 执行command
-    ***/
-    virtual void excuteCommand(INotification *notification) override;
-
 
 
 private:

@@ -53,11 +53,6 @@ public:
     **/
     virtual void removeMediator(IMediator *mediator) override;
 
-    /**
-    * 是否包含mediator
-    **/
-    virtual bool isHasMediator(const QString &mediatorName) override;
-
 private:
 
     PDView();

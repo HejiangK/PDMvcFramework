@@ -26,6 +26,9 @@ void PDController::excuteCommand(INotification *notification)
 {
     if(commandMap.contains(notification->getNotificationName()))
         commandMap[notification->getNotificationName()]->excute(notification);
-    else
-        qDebug() << "notification : " << notification->getNotificationName() << " is not excute command !";
+}
+
+bool PDController::hasCommand(const QString &notificationName)
+{
+    return commandMap.contains(notificationName);
 }

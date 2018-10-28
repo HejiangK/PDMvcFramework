@@ -11,6 +11,8 @@ class PDMVC_EXPORT IFacade
 {
 public:
 
+    //--------------------------observer----------------------------
+
     /***
     * 注册察
     **/
@@ -22,14 +24,11 @@ public:
     virtual void removeObserver(const QString &notificationName) = 0;
 
     /***
-    * 是否包含该notification的观察者
-    **/
-    virtual bool isHasObserver(const QString &notificationName) = 0;
-
-    /***
     * 通知观察者
     **/
     virtual void notifiObserver(INotification *notification) = 0;
+
+    //-------------------------mediator-------------------
 
     /**
     * 注册view处理
@@ -46,10 +45,7 @@ public:
     **/
     virtual IMediator *getMediator(const QString &mediatorName) = 0;
 
-    /**
-    * 是否包含mediator
-    **/
-    virtual bool isHasMediator(const QString &mediatorName) = 0;
+    //-----------------------------proxy-----------------
 
     /*
     * 注册proxy
@@ -66,6 +62,8 @@ public:
     **/
     virtual IProxy *getProxy(const QString &proxyName) = 0;
 
+    //-----------------------command----------------------
+
     /**
     * 注册command
     **/
@@ -75,11 +73,6 @@ public:
     * 一次command
     ***/
     virtual void removeCommand(const QString &notificationName) = 0;
-
-    /**
-    * 执行command
-    ***/
-    virtual void excuteCommand(INotification *notification) = 0;
 };
 
 #endif // IFACADE_H

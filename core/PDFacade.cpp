@@ -25,16 +25,13 @@ void PDFacade::removeObserver(const QString &notificationName)
     mView->removeObserver(notificationName);
 }
 
-bool PDFacade::isHasObserver(const QString &notificationName)
-{
-    return mView->isHasObserver(notificationName);
-}
-
 void PDFacade::notifiObserver(INotification *notification)
 {
-    mView->notifiObserver(notification);
+    if(mView->isHasObserver(notification->getNotificationName()))
+        mView->notifiObserver(notification);
 
-    mController->excuteCommand(notification);
+    if(mController->hasCommand(notification->getNotificationName()))
+        mController->excuteCommand(notification);
 }
 
 void PDFacade::registMediator(IMediator *mediator)
@@ -50,11 +47,6 @@ void PDFacade::removeMediator(IMediator *mediator)
 IMediator *PDFacade::getMediator(const QString &mediatorName)
 {
     return mView->getMediator(mediatorName);
-}
-
-bool PDFacade::isHasMediator(const QString &mediatorName)
-{
-    return mView->isHasMediator(mediatorName);
 }
 
 void PDFacade::registProxy(IProxy *proxy)
@@ -82,7 +74,3 @@ void PDFacade::removeCommand(const QString &notificationName)
     mController->removeCommand(notificationName);
 }
 
-void PDFacade::excuteCommand(INotification *notification)
-{
-    mController->excuteCommand(notification);
-}

@@ -21,6 +21,11 @@ public:
     * 执行command
     ***/
     virtual void excuteCommand(INotification *notification) = 0;
+
+    /**
+    * 是否包含notificationName的command
+    **/
+    virtual bool hasCommand(const QString &notificationName) = 0;
 };
 
 #endif // ICONTROLLER_H

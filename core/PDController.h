@@ -34,6 +34,11 @@ public:
     ***/
     virtual void excuteCommand(INotification *notification) override;
 
+    /**
+    * 是否包含notificationName的command
+    **/
+    virtual bool hasCommand(const QString &notificationName) override;
+
 private:
 
     PDController();

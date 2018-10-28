@@ -47,10 +47,6 @@ public:
     **/
     virtual IMediator *getMediator(const QString &mediatorName) = 0;
 
-    /**
-    * 是否包含mediator
-    **/
-    virtual bool isHasMediator(const QString &mediatorName) = 0;
 };
 
 #endif // IVIEW_H

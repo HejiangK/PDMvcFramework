@@ -54,7 +54,3 @@ void PDView::removeMediator(IMediator *mediator)
     mediatorMap.remove(mediator->getMediatorName());
 }
 
-bool PDView::isHasMediator(const QString &mediatorName)
-{
-    return mediatorMap.contains(mediatorName);
-}
