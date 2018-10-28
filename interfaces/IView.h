@@ -6,8 +6,9 @@
 #include "interfaces/IObserver.h"
 #include "interfaces/IMediator.h"
 #include "interfaces/INotification.h"
+#include "utils/PDGlobal.h"
 
-class IView
+class PDMVC_EXPORT IView
 {
 public:
 

@@ -33,6 +33,8 @@ bool PDFacade::isHasObserver(const QString &notificationName)
 void PDFacade::notifiObserver(INotification *notification)
 {
     mView->notifiObserver(notification);
+
+    mController->excuteCommand(notification);
 }
 
 void PDFacade::registMediator(IMediator *mediator)

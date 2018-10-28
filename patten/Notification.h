@@ -3,7 +3,7 @@
 
 #include "interfaces/INotification.h"
 
-class Notification : public INotification
+class PDMVC_EXPORT Notification : public INotification
 {
 public:
     Notification(const QString &notificationName,const QVariant &body);

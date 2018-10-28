@@ -1,10 +1,12 @@
 ﻿#ifndef INOTIFICATION_H
 #define INOTIFICATION_H
 
+#include "utils/PDGlobal.h"
+
 #include <QString>
 #include <QVariant>
 
-class INotification
+class PDMVC_EXPORT INotification
 {
 public:
 

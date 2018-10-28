@@ -3,7 +3,7 @@
 
 #include "interfaces/INotifier.h"
 
-class Notifier : public INotifier
+class PDMVC_EXPORT Notifier : public INotifier
 {
 public:
     Notifier();

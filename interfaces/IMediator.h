@@ -6,7 +6,7 @@
 
 #include <QString>
 
-class IMediator : public Notifier
+class PDMVC_EXPORT IMediator : public Notifier,public IObserver
 {
 public:
 

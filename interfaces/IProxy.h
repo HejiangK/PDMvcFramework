@@ -3,7 +3,9 @@
 
 #include <QString>
 
-class IProxy
+#include "utils/PDGlobal.h"
+
+class PDMVC_EXPORT IProxy
 {
 public:
     virtual const QString &getProxyName() = 0;

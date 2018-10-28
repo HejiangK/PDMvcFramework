@@ -4,7 +4,9 @@
 #include <QString>
 #include <QVariant>
 
-class INotifier
+#include "utils/PDGlobal.h"
+
+class PDMVC_EXPORT INotifier
 {
 public:
 

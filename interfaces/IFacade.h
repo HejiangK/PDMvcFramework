@@ -7,7 +7,7 @@
 #include "IProxy.h"
 #include "ICommand.h"
 
-class IFacade
+class PDMVC_EXPORT IFacade
 {
 public:
 
