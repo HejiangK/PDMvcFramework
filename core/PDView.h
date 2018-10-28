@@ -43,6 +43,11 @@ public:
     ***/
     virtual void registMediator(IMediator *mediator) override;
 
+    /**
+    * 获取对应名字的mediator
+    **/
+    virtual IMediator *getMediator(const QString &mediatorName) override;
+
     /***
     * 移除view 处理
     **/

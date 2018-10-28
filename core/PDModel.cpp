@@ -17,10 +17,10 @@ void PDModel::registProxy(IProxy *proxy)
 
 void PDModel::removeProxy(IProxy *proxy)
 {
-    proxyMap.remove(proxy);
+    proxyMap.remove(proxy->getProxyName());
 }
 
-void PDModel::getProxy(const QString &proxyName)
+IProxy *PDModel::getProxy(const QString &proxyName)
 {
-    return proxyMap[proxyName]
+    return proxyMap[proxyName];
 }

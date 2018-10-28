@@ -8,9 +8,15 @@
 class PDModel : public IModel
 {
 public:
-    PDModel();
 
     virtual ~PDModel();
+
+    static PDModel &instance()
+    {
+        static PDModel model;
+
+        return model;
+    }
 
     /**
     * 注册proxy
@@ -25,7 +31,11 @@ public:
     /**
     * 获取对应proxy
     **/
-    virtual void getProxy(const QString &proxyName) override;
+    virtual IProxy *getProxy(const QString &proxyName) override;
+
+private:
+
+    PDModel();
 
 private:
 

@@ -44,6 +44,11 @@ void PDView::registMediator(IMediator *mediator)
     mediatorMap[mediator->getMediatorName()] = mediator;
 }
 
+IMediator *PDView::getMediator(const QString &mediatorName)
+{
+    return mediatorMap[mediatorName];
+}
+
 void PDView::removeMediator(IMediator *mediator)
 {
     mediatorMap.remove(mediator->getMediatorName());

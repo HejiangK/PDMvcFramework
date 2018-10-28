@@ -20,7 +20,7 @@ public:
     /**
     * 获取对应proxy
     **/
-    virtual void getProxy(const QString &proxyName) = 0;
+    virtual IProxy *getProxy(const QString &proxyName) = 0;
 };
 
 #endif // IMODEL_H

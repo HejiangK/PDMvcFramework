@@ -42,6 +42,11 @@ public:
     virtual void removeMediator(IMediator *mediator) = 0;
 
     /**
+    * 获取对应名字的mediator
+    **/
+    virtual IMediator *getMediator(const QString &mediatorName) = 0;
+
+    /**
     * 是否包含mediator
     **/
     virtual bool isHasMediator(const QString &mediatorName) = 0;

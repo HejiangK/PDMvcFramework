@@ -25,7 +25,9 @@ SOURCES += \
     core/PDView.cpp \
     interfaces/IFacade.cpp \
     interfaces/IProxy.cpp \
-    core/PDModel.cpp
+    core/PDModel.cpp \
+    interfaces/ICommand.cpp \
+    core/PDController.cpp
 
 HEADERS +=\
     utils/PDGlobal.h \
@@ -42,7 +44,9 @@ HEADERS +=\
     core/PDView.h \
     interfaces/IFacade.h \
     interfaces/IProxy.h \
-    core/PDModel.h
+    core/PDModel.h \
+    interfaces/ICommand.h \
+    core/PDController.h
 
 unix {
     target.path = /usr/lib
