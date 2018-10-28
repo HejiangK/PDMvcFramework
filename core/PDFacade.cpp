@@ -74,3 +74,4 @@ void PDFacade::removeCommand(const QString &notificationName)
     mController->removeCommand(notificationName);
 }
 
+

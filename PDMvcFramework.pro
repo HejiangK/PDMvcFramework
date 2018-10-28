@@ -27,7 +27,10 @@ SOURCES += \
     interfaces/IProxy.cpp \
     core/PDModel.cpp \
     interfaces/ICommand.cpp \
-    core/PDController.cpp
+    core/PDController.cpp \
+    core/PDCommand.cpp \
+    core/PDMediator.cpp \
+    core/PDProxy.cpp
 
 HEADERS +=\
     utils/PDGlobal.h \
@@ -46,7 +49,10 @@ HEADERS +=\
     interfaces/IProxy.h \
     core/PDModel.h \
     interfaces/ICommand.h \
-    core/PDController.h
+    core/PDController.h \
+    core/PDCommand.h \
+    core/PDMediator.h \
+    core/PDProxy.h
 
 unix {
     target.path = /usr/lib
