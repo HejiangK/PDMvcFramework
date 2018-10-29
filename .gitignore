@@ -1,0 +1,4 @@
+build/
+MakeFile
+MakeFile.*
+*.user.*

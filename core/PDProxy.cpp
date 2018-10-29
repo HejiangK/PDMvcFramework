@@ -1,6 +1,12 @@
-#include "PDProxy.h"
+﻿#include "PDProxy.h"
 
-PDProxy::PDProxy()
+PDProxy::PDProxy(const QString &proxyName)
+    :proxyName(proxyName)
+{
+
+}
+
+PDProxy::~PDProxy()
 {
 
 }

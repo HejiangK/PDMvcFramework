@@ -3,6 +3,7 @@
 #include "PDModel.h"
 #include "PDController.h"
 
+
 PDFacade::PDFacade()
 {
     mView       = &PDView::instance();
@@ -37,6 +38,17 @@ void PDFacade::notifiObserver(INotification *notification)
 void PDFacade::registMediator(IMediator *mediator)
 {
     mView->registMediator(mediator);
+
+    auto list   = mediator->getNotificationList();
+    auto it     = list.begin();
+
+    while(it != list.end())
+    {
+        registObserver(*it,mediator);
+
+        it ++;
+    }
+
 }
 
 void PDFacade::removeMediator(IMediator *mediator)

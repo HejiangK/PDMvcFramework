@@ -4,6 +4,8 @@
 #include "interfaces/INotification.h"
 #include "utils/PDGlobal.h"
 
+#include <QList>
+
 class PDMVC_EXPORT IObserver
 {
 public:

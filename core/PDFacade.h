@@ -55,15 +55,6 @@ public:
     **/
     virtual IMediator *getMediator(const QString &mediatorName) override;
 
-    /**
-    * 获取具体类型的mediator
-    **/
-    template <typename ObjectType>
-    ObjectType *getTypeMediator(const QString *mediatorName)
-    {
-        return qobject_cast<ObjectType>(getMediator(mediatorName));
-    }
-
 
     //-------------------------------------Model------------------------
 
@@ -82,14 +73,6 @@ public:
     **/
     virtual IProxy *getProxy(const QString &proxyName) override;
 
-    /**
-    * 获取具体类型的proxy
-    **/
-    template <typename ObjectType>
-    ObjectType *getTypeProxy(const QString &proxyName)
-    {
-        return qobject_cast<ObjectType>(getProxy(proxyName));
-    }
 
     //------------------------------command-------------
 

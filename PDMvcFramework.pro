@@ -54,7 +54,26 @@ HEADERS +=\
     core/PDMediator.h \
     core/PDProxy.h
 
-unix {
-    target.path = /usr/lib
-    INSTALLS += target
+
+BUILD_DIR = build
+macx:BUILD_DIR = $$BUILD_DIR/macx
+win32:BUILD_DIR = $$BUILD_DIR/win32
+linux-g++*:BUILD_DIR = $$BUILD_DIR/linux
+
+
+CONFIG(debug, debug|release){
+    BUILD_DIR = $$BUILD_DIR/debug
 }
+CONFIG(release, debug|release) {
+   BUILD_DIR = $$BUILD_DIR/release
+   CONFIG += warn_off
+}
+CONFIG += c++11
+CONFIG -= flat
+
+
+DESTDIR = $$BUILD_DIR/product
+OBJECTS_DIR = $$BUILD_DIR/objects
+MOC_DIR = $$BUILD_DIR/moc
+RCC_DIR = $$BUILD_DIR/rcc
+UI_DIR = $$BUILD_DIR/ui

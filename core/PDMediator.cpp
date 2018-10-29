@@ -1,6 +1,8 @@
-#include "PDMediator.h"
+﻿#include "PDMediator.h"
 
-PDMediator::PDMediator()
+PDMediator::PDMediator(const QString &mediatorName)
+    :viewCompoent(nullptr)
+    ,mediatorName(mediatorName)
 {
 
 }
@@ -10,12 +12,24 @@ PDMediator::~PDMediator()
 
 }
 
-const QString &PDMediator::getMediatorName()
+void PDMediator::appendNotification(const QString &notificationName)
 {
-    return mediatorName;
+    notificationList.append(notificationName);
 }
 
 const QList<QString> &PDMediator::getNotificationList()
 {
     return notificationList;
 }
+
+const QString &PDMediator::getMediatorName()
+{
+    return mediatorName;
+}
+
+void PDMediator::setViewCompoent(void *viewCompoent)
+{
+    PDMediator::viewCompoent = viewCompoent;
+}
+
+
