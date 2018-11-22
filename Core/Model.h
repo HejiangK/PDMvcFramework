@@ -1,19 +1,19 @@
 ﻿#ifndef PDMODEL_H
 #define PDMODEL_H
 
-#include "interfaces/IModel.h"
+#include "Interfaces/IModel.h"
 
 #include <QMap>
 
-class PDModel : public IModel
+class Model : public IModel
 {
 public:
 
-    virtual ~PDModel();
+    virtual ~Model();
 
-    static PDModel &instance()
+    static Model &instance()
     {
-        static PDModel model;
+        static Model model;
 
         return model;
     }
@@ -35,7 +35,7 @@ public:
 
 private:
 
-    PDModel();
+    Model();
 
 private:
 

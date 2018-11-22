@@ -1,14 +1,15 @@
-﻿#ifndef IPROXY_H
-#define IPROXY_H
+﻿#ifndef IVIEWCOMPOENT_H
+#define IVIEWCOMPOENT_H
 
 #include <QString>
 
-#include "Utils/PDGlobal.h"
+#include "Utils/PDAny.h"
 
-class PDMVC_EXPORT IProxy
+class IViewCompoent
 {
 public:
-    virtual const QString &getProxyName() = 0;
+
+    virtual void onMediatorHandle(const QString &type,const PDAny &data) = 0;
 
     /**
     * 获取具体类型的proxy
@@ -20,4 +21,4 @@ public:
     }
 };
 
-#endif // IPROXY_H
+#endif // IVIEWCOMPOENT_H

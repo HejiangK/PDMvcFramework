@@ -1,12 +1,12 @@
 ﻿#ifndef NOTIFICATION_H
 #define NOTIFICATION_H
 
-#include "interfaces/INotification.h"
+#include "Interfaces/INotification.h"
 
 class PDMVC_EXPORT Notification : public INotification
 {
 public:
-    Notification(const QString &notificationName,const QVariant &body);
+    Notification(const QString &notificationName,const PDAny &body);
 
     virtual ~Notification();
 
@@ -18,13 +18,13 @@ public:
     /**
     * 获取notifi数据体
     **/
-    virtual const QVariant &getBody() override;
+    virtual const PDAny &getBody() override;
 
 private:
 
     QString     notificationName;
 
-    QVariant    body;
+    PDAny       body;
 
 };
 

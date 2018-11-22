@@ -1,8 +1,8 @@
 ﻿#ifndef ICOMMAND_H
 #define ICOMMAND_H
 
-#include "interfaces/INotification.h"
-#include "utils/PDGlobal.h"
+#include "Interfaces/INotification.h"
+#include "Utils/PDGlobal.h"
 
 class PDMVC_EXPORT ICommand
 {

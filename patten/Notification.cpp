@@ -1,8 +1,7 @@
 ﻿#include "Notification.h"
 
 
-
-Notification::Notification(const QString &notificationName, const QVariant &body)
+Notification::Notification(const QString &notificationName, const PDAny &body)
     :notificationName(notificationName)
     ,body(body)
 {
@@ -19,7 +18,7 @@ const QString &Notification::getNotificationName()
     return notificationName;
 }
 
-const QVariant &Notification::getBody()
+const PDAny &Notification::getBody()
 {
     return body;
 }

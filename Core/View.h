@@ -1,19 +1,19 @@
 ﻿#ifndef PDVIEW_H
 #define PDVIEW_H
 
-#include "interfaces/IView.h"
+#include "Interfaces/IView.h"
 
 #include <QMap>
 
-class PDView : public IView
+class View : public IView
 {
 public:
 
-    virtual ~PDView();
+    virtual ~View();
 
-    static PDView &instance()
+    static View &instance()
     {
-        static PDView view;
+        static View view;
 
         return view;
     }
@@ -55,7 +55,7 @@ public:
 
 private:
 
-    PDView();
+    View();
 
 
 private:

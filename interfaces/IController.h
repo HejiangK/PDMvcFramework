@@ -1,7 +1,7 @@
 #ifndef ICONTROLLER_H
 #define ICONTROLLER_H
 
-#include "interfaces/ICommand.h"
+#include "Interfaces/ICommand.h"
 
 class IController
 {

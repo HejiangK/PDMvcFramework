@@ -1,20 +1,20 @@
-#ifndef PDCONTROLLER_H
+﻿#ifndef PDCONTROLLER_H
 #define PDCONTROLLER_H
 
-#include "interfaces/IController.h"
+#include "Interfaces/IController.h"
 
 #include <QMap>
 
-class PDController : public IController
+class Controller : public IController
 {
 public:
 
 
-    virtual ~PDController();
+    virtual ~Controller();
 
-    static PDController &instance()
+    static Controller &instance()
     {
-        static PDController controller;
+        static Controller controller;
 
         return controller;
     }
@@ -41,7 +41,7 @@ public:
 
 private:
 
-    PDController();
+    Controller();
 
 private:
 

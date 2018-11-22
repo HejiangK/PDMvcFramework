@@ -1,10 +1,10 @@
 ﻿#ifndef INOTIFICATION_H
 #define INOTIFICATION_H
 
-#include "utils/PDGlobal.h"
-
 #include <QString>
-#include <QVariant>
+
+#include "Utils/PDGlobal.h"
+#include "Utils/PDAny.h"
 
 class PDMVC_EXPORT INotification
 {
@@ -18,7 +18,7 @@ public:
     /**
     * 获取notifi数据体
     **/
-    virtual const QVariant &getBody() = 0;
+    virtual const PDAny &getBody() = 0;
 };
 
 #endif // INOTIFICATION_H

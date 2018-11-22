@@ -1,14 +1,15 @@
 ﻿#ifndef PDMEDIATOR_H
 #define PDMEDIATOR_H
 
-#include "interfaces/IMediator.h"
+#include "Interfaces/IMediator.h"
+#include "Interfaces/IProxy.h"
 
-class PDMVC_EXPORT PDMediator : public IMediator
+class PDMVC_EXPORT Mediator : public IMediator
 {
 public:
-    PDMediator(const QString &mediatorName);
+    Mediator(const QString &mediatorName);
 
-    virtual ~PDMediator();
+    virtual ~Mediator();
 
     /**
     * 添加notification监听到列表
@@ -28,15 +29,29 @@ public:
     /**
     * 设置被代理行为的view组件
     ***/
-    virtual void setViewCompoent(void *viewCompoent) override;
+    virtual void setViewCompoent(IViewCompoent *viewCompoent) override;
+
+    /***
+    * 获取对应的proxy
+    **/
+    IProxy *getProxy(const QString &proxyName);
 
     /**
     * 获取被代理的组件
     **/
     template <typename ObjectType>
-    ObjectType *getViewCompoent()
+    ObjectType getViewCompoent()
     {
-        return dynamic_cast<ObjectType*>(viewCompoent);
+        return dynamic_cast<ObjectType>(viewCompoent);
+    }
+
+    /***
+    * 获取proxy
+    **/
+    template <typename ObjectType>
+    ObjectType getCastProxy(const QString &proxyName)
+    {
+        return getProxy(proxyName)->cast<ObjectType>();
     }
 
 private:
@@ -45,7 +60,7 @@ private:
 
     QString         mediatorName;
 
-    void            *viewCompoent;
+    IViewCompoent   *viewCompoent;
 };
 
 #endif // PDMEDIATOR_H

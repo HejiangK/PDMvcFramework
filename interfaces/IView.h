@@ -3,10 +3,10 @@
 
 #include <QString>
 
-#include "interfaces/IObserver.h"
-#include "interfaces/IMediator.h"
-#include "interfaces/INotification.h"
-#include "utils/PDGlobal.h"
+#include "Interfaces/IObserver.h"
+#include "Interfaces/IMediator.h"
+#include "Interfaces/INotification.h"
+#include "Utils/PDGlobal.h"
 
 class PDMVC_EXPORT IView
 {

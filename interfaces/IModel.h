@@ -1,7 +1,7 @@
 ﻿#ifndef IMODEL_H
 #define IMODEL_H
 
-#include "interfaces/IProxy.h"
+#include "Interfaces/IProxy.h"
 
 class IModel
 {

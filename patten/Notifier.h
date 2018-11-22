@@ -1,7 +1,7 @@
 ﻿#ifndef NOTIFIER_H
 #define NOTIFIER_H
 
-#include "interfaces/INotifier.h"
+#include "Interfaces/INotifier.h"
 
 class PDMVC_EXPORT Notifier : public INotifier
 {
@@ -13,7 +13,7 @@ public:
     /**
     * 发送消息提醒
     **/
-    virtual void sendNotification(const QString &notificationName,const QVariant &body) override;
+    virtual void sendNotification(const QString &notificationName,const PDAny &body = nullptr) override;
 };
 
 #endif // NOTIFIER_H

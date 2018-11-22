@@ -1,22 +1,22 @@
 ﻿#ifndef PDFACADE_H
 #define PDFACADE_H
 
-#include "utils/PDGlobal.h"
-#include "interfaces/IFacade.h"
+#include "Utils/PDGlobal.h"
+#include "Interfaces/IFacade.h"
 
 class IView;
 class IModel;
 class IController;
 
-class PDMVC_EXPORT PDFacade : public IFacade
+class PDMVC_EXPORT Facade : public IFacade
 {
 public:
 
-    virtual ~PDFacade();
+    virtual ~Facade();
 
-    static PDFacade &instance()
+    static Facade &instance()
     {
-        static PDFacade facade;
+        static Facade facade;
 
         return facade;
     }
@@ -89,7 +89,7 @@ public:
 
 private:
 
-    PDFacade();
+    Facade();
 
 private:
 

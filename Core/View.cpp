@@ -1,33 +1,33 @@
-﻿#include "PDView.h"
+﻿#include "View.h"
 
 #include <QDebug>
 
-PDView::PDView()
+View::View()
 {
 
 }
 
-PDView::~PDView()
+View::~View()
 {
 
 }
 
-void PDView::registObserver(const QString &notificationName, IObserver *observer)
+void View::registObserver(const QString &notificationName, IObserver *observer)
 {
     observerMap[notificationName] = observer;
 }
 
-void PDView::removeObserver(const QString &notificationName)
+void View::removeObserver(const QString &notificationName)
 {
     observerMap.remove(notificationName);
 }
 
-bool PDView::isHasObserver(const QString &notificationName)
+bool View::isHasObserver(const QString &notificationName)
 {
     return observerMap.contains(notificationName);
 }
 
-void PDView::notifiObserver(INotification *notification)
+void View::notifiObserver(INotification *notification)
 {
     if(observerMap.contains(notification->getNotificationName()))
     {
@@ -39,17 +39,17 @@ void PDView::notifiObserver(INotification *notification)
 
 }
 
-void PDView::registMediator(IMediator *mediator)
+void View::registMediator(IMediator *mediator)
 {
     mediatorMap[mediator->getMediatorName()] = mediator;
 }
 
-IMediator *PDView::getMediator(const QString &mediatorName)
+IMediator *View::getMediator(const QString &mediatorName)
 {
     return mediatorMap[mediatorName];
 }
 
-void PDView::removeMediator(IMediator *mediator)
+void View::removeMediator(IMediator *mediator)
 {
     mediatorMap.remove(mediator->getMediatorName());
 }

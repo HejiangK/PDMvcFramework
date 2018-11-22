@@ -1,8 +1,9 @@
 ﻿#ifndef IMEDIATOR_H
 #define IMEDIATOR_H
 
-#include "interfaces/IObserver.h"
-#include "patten/Notifier.h"
+#include "Interfaces/IObserver.h"
+#include "Patten/Notifier.h"
+#include "Interfaces/IViewCompoent.h"
 
 #include <QString>
 #include <QList>
@@ -29,15 +30,15 @@ public:
     /**
     * 设置被代理行为的view组件
     ***/
-    virtual void setViewCompoent(void *viewCompoent) = 0;
+    virtual void setViewCompoent(IViewCompoent *viewCompoent) = 0;
 
     /**
     * 向下转换
     **/
     template <typename ObjectType>
-    ObjectType *cast()
+    ObjectType cast()
     {
-        return dynamic_cast<ObjectType*>(this);
+        return dynamic_cast<ObjectType>(this);
     }
 };
 

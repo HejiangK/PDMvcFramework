@@ -1,32 +1,32 @@
-﻿#include "PDFacade.h"
-#include "PDView.h"
-#include "PDModel.h"
-#include "PDController.h"
+﻿#include "Facade.h"
+#include "View.h"
+#include "Model.h"
+#include "Controller.h"
 
 
-PDFacade::PDFacade()
+Facade::Facade()
 {
-    mView       = &PDView::instance();
-    mModel      = &PDModel::instance();
-    mController = &PDController::instance();
+    mView       = &View::instance();
+    mModel      = &Model::instance();
+    mController = &Controller::instance();
 }
 
-PDFacade::~PDFacade()
+Facade::~Facade()
 {
 
 }
 
-void PDFacade::registObserver(const QString &notificationName, IObserver *observer)
+void Facade::registObserver(const QString &notificationName, IObserver *observer)
 {
     mView->registObserver(notificationName,observer);
 }
 
-void PDFacade::removeObserver(const QString &notificationName)
+void Facade::removeObserver(const QString &notificationName)
 {
     mView->removeObserver(notificationName);
 }
 
-void PDFacade::notifiObserver(INotification *notification)
+void Facade::notifiObserver(INotification *notification)
 {
     if(mView->isHasObserver(notification->getNotificationName()))
         mView->notifiObserver(notification);
@@ -35,7 +35,7 @@ void PDFacade::notifiObserver(INotification *notification)
         mController->excuteCommand(notification);
 }
 
-void PDFacade::registMediator(IMediator *mediator)
+void Facade::registMediator(IMediator *mediator)
 {
     mView->registMediator(mediator);
 
@@ -51,37 +51,37 @@ void PDFacade::registMediator(IMediator *mediator)
 
 }
 
-void PDFacade::removeMediator(IMediator *mediator)
+void Facade::removeMediator(IMediator *mediator)
 {
     mView->removeMediator(mediator);
 }
 
-IMediator *PDFacade::getMediator(const QString &mediatorName)
+IMediator *Facade::getMediator(const QString &mediatorName)
 {
     return mView->getMediator(mediatorName);
 }
 
-void PDFacade::registProxy(IProxy *proxy)
+void Facade::registProxy(IProxy *proxy)
 {
     mModel->registProxy(proxy);
 }
 
-void PDFacade::removeProxy(IProxy *proxy)
+void Facade::removeProxy(IProxy *proxy)
 {
     mModel->removeProxy(proxy);
 }
 
-IProxy *PDFacade::getProxy(const QString &proxyName)
+IProxy *Facade::getProxy(const QString &proxyName)
 {
     return mModel->getProxy(proxyName);
 }
 
-void PDFacade::registCommand(const QString &notificationName, ICommand *command)
+void Facade::registCommand(const QString &notificationName, ICommand *command)
 {
     mController->registCommand(notificationName,command);
 }
 
-void PDFacade::removeCommand(const QString &notificationName)
+void Facade::removeCommand(const QString &notificationName)
 {
     mController->removeCommand(notificationName);
 }
